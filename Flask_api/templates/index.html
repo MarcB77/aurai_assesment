@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Paddenstoelen classificeren</title>
+  
+</head>
+
+<body style="background: #010013;">
+ <div class="login">
+  <img src="https://raw.githubusercontent.com/MarcB77/aurai_assesment/main/images/aurai_logo.png" alt="Aurai LOGO" width="300" height="140">
+	<h1 style="font-size: 15px;color:rgb(255, 255, 255);">Paddenstoelen classificeren</h1>
+  <h2 style="font-size: 12px;color:rgb(255, 255, 255);">Author: Marc Blomvliet | Aurai Assignment</h2>
+
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="number" name="cap-diameter" step="any" placeholder="cap-diameter" required="required" style="width: 180px;"/><br>
+      <input type="number" name="stem-height" step="any" placeholder="stem-height" required="required" style="width: 180px;"/><br>
+      <input type="number" name="stem-width" step="any" placeholder="stem-width" required="required" style="width: 180px;"/><br>
+        <input type="text" name="cap-shape" step="any" placeholder="cap-shape" required="required" style="width: 180px;"/><br>
+        <input type="text" name="cap-color" step="any" placeholder="cap-color" required="required" style="width: 180px;"/><br>
+        <input type="text" name="does-bruise-or-bleed" step="any" placeholder="does-bruise-or-bleed" required="required" style="width: 180px;"/><br>
+        <input type="text" name="gill-color" step="any" placeholder="gill-color" required="required" style="width: 180px;"/><br>
+        <input type="text" name="stem-color" step="any" placeholder="stem-color" required="required" style="width: 180px;"/><br>
+        <input type="text" name="has-ring" step="any" placeholder="has-ring" required="required" style="width: 180px;"/><br>
+        <input type="text" name="habitat" step="any" placeholder="habitat" required="required" style="width: 180px;"/><br>
+        <input type="text" name="season" step="any" placeholder="season" required="required" style="width: 180px;"/><br>
+        <input type="text" name="ring-type" step="any" placeholder="ring-type" required="required" style="width: 180px;"/><p>
+        <!--columns = ['cap-diameter', 'cap-shape',
+            'cap-color', 'does-bruise-or-bleed', 
+            'gill-color', 'stem-height', 'stem-width', 
+            'stem-color', 'has-ring', 'habitat', 'season',
+            'ring-type']-->    
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Paddenstoel</button></p>
+    </form>
+
+    <h4 style="color:rgb(255, 255, 255);">
+      {{ prediction_model }} </h4>
+      <h3 style="font-size: 14px;color:rgb(255, 255, 255);">Edible example:</h3>
+      <div style="font-size: 14px;word-spacing: 29pt;color:rgb(255, 255, 255);">
+        cap-diameter=13.26 gill-color=w ring-type=f</div>
+      <div style="font-size: 12px;word-spacing: 49pt;color:rgb(255, 255, 255);">
+        stem-height=9.78 stem-color=w</div>
+      <div style="font-size: 14px;word-spacing: 36pt;color:rgb(255, 255, 255);">
+        stem-width=28.81 has-ring=f</div>
+      <div style="font-size: 14px;word-spacing: 60pt;color:rgb(255, 255, 255);">
+        cap-shape=x habitat=d</div>
+      <div style="font-size: 14px;word-spacing: 62pt;color:rgb(255, 255, 255);">
+        cap-color=g season=w</div>
+      <div style="font-size: 14px;word-spacing: 16pt;color:rgb(255, 255, 255);">
+        does-bruise-or-bleed=f </div>
+  
+ </div>
+
+
+</body>
+</html>

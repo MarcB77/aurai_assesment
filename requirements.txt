@@ -1,0 +1,13 @@
+pandas
+fastparquet
+Flask
+numpy
+pickle5
+python-math
+datetime
+scikit-learn
+seaborn
+matplotlib
+xgboost
+keras
+Flask
